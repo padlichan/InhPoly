@@ -21,7 +21,7 @@ internal class Motorcycle : Vehicle
         };
         for (int i = 0; i < 10; i++)
         {
-            Console.WriteLine($"{message}{((EngineType.HorsePower * fuelMod) * Math.Exp(Math.Sqrt(i)) / 2) * (HasSidecar ? 0.8 : 1.0)}mph");
+            Console.WriteLine($"{message}{((EngineType.HorsePower * fuelMod) * Math.Exp(Math.Sqrt(i)) / 2) * (HasSidecar ? 0.8 : 1.0):F}mph");
         }
     }
 }

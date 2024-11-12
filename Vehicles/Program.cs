@@ -5,7 +5,7 @@ internal class Program
     static void Main(string[] args)
     {
         Car chrisCar = new Car("Ford", "Mustang");
-        Motorcycle liliBike = new Motorcycle(false,"Suzuki","Avenis");
+        Motorcycle liliBike = new Motorcycle(false, "Suzuki", "Address");
 
         chrisCar.Drive();
 
