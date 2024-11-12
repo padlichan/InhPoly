@@ -16,9 +16,10 @@ public abstract class Vehicle
         EngineType = engineType;
     }
 
-    protected void StartEngine()
+    public void StartEngine()
     {
         EngineType.Start();
+        Console.WriteLine("Vroom vroom!");
     }
 
     public void Drive()
