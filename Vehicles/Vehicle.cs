@@ -1,22 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Vehicles;
 
-namespace Vehicles
+public abstract class Vehicle
 {
-    public abstract class Vehicle
-    {
-        public string Make { get; set; }
-        public string Model { get; set; }
-        public int Speed { get; set; }
+    public string Make { get; set; }
+    public string Model { get; set; }
+    public int Speed { get; set; }
+    public Engine EngineType { get; set; }
 
-        protected Vehicle(string make, string model, int speed)
-        {
-            Make = make;
-            Model = model;
-            Speed = speed;
-        }
+    protected Vehicle(string make, string model, Engine engineType)
+    {
+        Speed = 0;
+
+        Make = make;
+        Model = model;
+        EngineType = engineType;
     }
+
+    protected void StartEngine()
+    {
+        EngineType.Start();
+    }
+
+    public void Drive()
+    {
+        if (EngineType.IsRunning)
+            Accelerate();
+        else
+            Console.WriteLine($"{Make} {Model} is not running.");
+    }
+
+    protected abstract void Accelerate();
 }

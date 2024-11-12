@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Vehicles;
 
-namespace Vehicles
+internal class Motorcycle : Vehicle
 {
-    internal class Motorcycle : Vehicle
+    public bool HasSideCar { get; set; }
+
+    public Motorcycle(bool hasSideCar, string make, string model) : base(make, model, new MotorcycleEngine())
     {
-        public bool HasSideCar { get; set; }
-
-        public Motorcycle(bool hasSideCar, string make, string model, int speed) : base(make, model, speed)
-        {
-
-        }  
-    }
+        HasSideCar = hasSideCar;
+    }  
 }

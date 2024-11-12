@@ -1,9 +1,8 @@
-﻿namespace Vehicles
+﻿namespace Vehicles;
+
+public enum FuelType
 {
-    public enum FuelType
-    {
-        Unleaded,
-        Leaded,
-        Diesel
-    } 
-}
+    Unleaded,
+    Leaded,
+    Diesel
+} 
