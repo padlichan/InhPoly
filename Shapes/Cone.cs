@@ -2,12 +2,15 @@
 
 public class Cone : Shape3D
 {
-    public Cone(Shape baseShape) : base(baseShape)
+    public double Height { get; set; }
+
+    public Cone(Circle circleShape, double height) : base(circleShape)
     {
+        Height = height;
     }
 
     public override double CalculateVolume()
     {
-        return 0;
+        return BaseShape.CalculateArea() * Height / 3;
     }
 }

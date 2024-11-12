@@ -2,12 +2,15 @@
 
 public class Cylinder : Shape3D
 {
-    public Cylinder(Shape baseShape) : base(baseShape)
+    public double Height { get; set; }
+
+    public Cylinder(Circle circleShape, double height) : base(circleShape)
     {
+        Height = height;
     }
 
     public override double CalculateVolume()
     {
-        return 0;
+        return BaseShape.CalculateArea() * Height;
     }
 }

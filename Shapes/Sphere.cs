@@ -2,12 +2,12 @@
 
 public class Sphere : Shape3D
 {
-    public Sphere(Shape baseShape) : base(baseShape)
+    public Sphere(Circle circleShape) : base(circleShape)
     {
     }
 
     public override double CalculateVolume()
     {
-        return 0;
+        return 4 / 3 * Math.PI * Math.Pow( ((Circle)BaseShape).Radius, 3 );
     }
 }

@@ -15,5 +15,30 @@ internal class Program
         {
             Console.WriteLine($"{shape.GetType().Name} area = {shape.CalculateArea():f}");
         }
+
+        List<Shape3D> shapes3d = new List<Shape3D>();
+
+        foreach (Shape shape in shapes)
+        {
+            if (shape is Circle circle)
+            {
+                shapes3d.Add(new Sphere(circle));
+                shapes3d.Add(new Cylinder(circle, 5));
+                shapes3d.Add(new Cone(circle, 5));
+            }
+            else if (shape is Triangle triangle)
+            {
+
+                shapes3d.Add(new Prism(triangle, 5));
+                shapes3d.Add(new Pyramid(triangle, 5));
+            }
+        }
+
+        foreach (Shape3D shape3d in shapes3d)
+        {
+            Console.WriteLine(shape3d.GetType().Name + " with " +
+            shape3d.BaseShape.GetType().Name + " base | Volume = " +
+            $"{ shape3d.CalculateVolume():f}");
+        }
     }
 }

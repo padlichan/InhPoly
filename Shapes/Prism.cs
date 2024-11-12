@@ -2,12 +2,15 @@
 
 public class Prism : Shape3D
 {
-    public Prism(Shape baseShape) : base(baseShape)
+    public double Height { get; set; }
+
+    public Prism(Shape triangleShape, double height) : base(triangleShape)
     {
+        Height = height;
     }
 
     public override double CalculateVolume()
     {
-        return 0;
+        return BaseShape.CalculateArea() * Height;
     }
 }
