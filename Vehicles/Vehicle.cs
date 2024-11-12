@@ -2,10 +2,10 @@
 
 public abstract class Vehicle
 {
-    public string Make { get; set; }
-    public string Model { get; set; }
-    public int Speed { get; set; }
-    public Engine EngineType { get; set; }
+    public string Make { get; }
+    public string Model { get; }
+    public int Speed { get; protected set; }
+    public Engine EngineType { get; protected set; }
 
     protected Vehicle(string make, string model, Engine engineType)
     {
